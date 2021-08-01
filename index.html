@@ -55,7 +55,19 @@ L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 $.getJSON("es4map.geojson", function(data){
-	L.getJSON(data).addTo(map);
+	L.getJSON(data {
+		style: function(feature){
+		var conditionalColor;
+		var REM_20 = feature.properties.HI;
+			if (REM_20>.01) conditionalColor = "#006837";
+			else conditionalColor = "#f7f7f7" ; // no data
+			return {	color: "#999",
+						weight: 1,
+						fillColor: conditionalColor,
+						fillOpacity: .6, };
+
+			}
+		}).addTo(map).bringToBack();
 });
 
 
