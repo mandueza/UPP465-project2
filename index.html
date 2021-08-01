@@ -60,11 +60,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
 
 
 $.getJSON("es4map.geojson", function(data){
-	L.geoJson(data {
+	L.geoJson(data, {
 		style: function(feature){
 		var conditionalColor;
 		var rem = feature.properties.REM__20;
-			if ( rem>.05 ) conditionalColor = "#006837";
+			if ( rem>1 ) conditionalColor = "#006837";
 			else conditionalColor = "#f7f7f7"; // no data
 			return {	color: "#999",
 						weight: 1,
