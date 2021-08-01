@@ -77,7 +77,7 @@ $.getJSON("es4map.geojson", function(data){
 
 			},
 			onEachFeature: function( feature, layer ){
-				layer.bindPopup("Municipality: " + feature.properties.ADM1_ES +  "<br/>" + Remittance Share: " + feature.properties.REM__20 ) 
+				layer.bindPopup("Municipality: " + feature.properties.ADM1_ES +  "<br/>" + "Remittance Share: " + feature.properties.REM__20 ) 
 			}
 		} ).addTo(map).bringToBack();
 });
