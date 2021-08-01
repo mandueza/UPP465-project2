@@ -58,14 +58,17 @@ $.getJSON("es4map.geojson", function(data){
 	L.getJSON(data {
 		style: function(feature){
 		var conditionalColor;
-		var REM__20 = feature.properties.HI;
-			if (REM__20>.01) conditionalColor = "#006837";
+		var rem = feature.properties.REM__20;
+			if (rem>.01) conditionalColor = "#006837";
 			else conditionalColor = "#f7f7f7" ; // no data
 			return {	color: "#999",
 						weight: 1,
 						fillColor: conditionalColor,
 						fillOpacity: .6, };
 
+			},
+			onEachFeature: function( feature, Layer){
+				layer.bindPopup( "Remittance Share: " + feature.properties.REM__20)
 			}
 		}).addTo(map).bringToBack();
 });
