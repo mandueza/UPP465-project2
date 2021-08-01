@@ -64,7 +64,11 @@ $.getJSON("es4map.geojson", function(data){
 		style: function(feature){
 		var conditionalColor;
 		var rem = feature.properties.REM__20;
-			if ( rem>1 ) conditionalColor = "#006837";
+			if ( rem>4.1 ) conditionalColor = "#08519c";
+			else if ( rem>1.7 ) conditionalColor = "#3182bd";
+			else if ( rem>.76 ) conditionalColor = "#6baed6";
+			else if ( rem>.25 ) conditionalColor = "#bdd7e7";
+			else if ( rem>0) conditionalColor = "#eff3ff";
 			else conditionalColor = "#f7f7f7"; // no data
 			return {	color: "#999",
 						weight: 1,
@@ -73,7 +77,7 @@ $.getJSON("es4map.geojson", function(data){
 
 			},
 			onEachFeature: function( feature, layer ){
-				layer.bindPopup( "Remittance Share: " + feature.properties.REM__20 )
+				layer.bindPopup("Municipality: " + feature.properties.ADM1_ES +  "<br/>" + Remittance Share: " + feature.properties.REM__20 ) 
 			}
 		} ).addTo(map).bringToBack();
 });
