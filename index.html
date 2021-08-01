@@ -67,11 +67,11 @@ $.getJSON("es4map.geojson", function(data){
 		style: function(feature){
 		var conditionalColor;
 		var rem = feature.properties.REM__20;
-			if ( rem>4.1 ) conditionalColor = "#08519c";
-			else if ( rem>1.7 ) conditionalColor = "#3182bd";
-			else if ( rem>.76 ) conditionalColor = "#6baed6";
-			else if ( rem>.25 ) conditionalColor = "#bdd7e7";
-			else if ( rem>0) conditionalColor = "#eff3ff";
+			if ( rem>4.1 ) conditionalColor = "#a50f15";
+			else if ( rem>1.7 ) conditionalColor = "#de2d26";
+			else if ( rem>.76 ) conditionalColor = "#fb6a4a";
+			else if ( rem>.25 ) conditionalColor = "#fcae91";
+			else if ( rem>0) conditionalColor = "#fee5d9";
 			else conditionalColor = "#f7f7f7"; // no data
 			return {	color: "#999",
 						weight: 1,
