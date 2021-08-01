@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+
+
+<head>
+	<title>Exploring Remittances</title>
+	<link rel="stylesheet" href="style.css">
+
+	<!--My style sheet -->
+	 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+   <!--Leaflet Basemap Provider Link:-->
+   <script src="js/leaflet-providers.js"></script>
+</head>
+
+<body>
+	
+
+	<div class="div1"> 
+		<h1> Exploring Remittances</h1>
+	</div>
+
+	<div class="div2"> 
+<p style="vertical-align"> The map below shows the newly updated yearly remittance inflows at the municipality level (using the 2018 Salvadorian census). Larger remittance inflows provide opportunities for investment, local development and increased educational attainment. .
+
+  </p>		
+</div>
+
+</div>
+
+
+<div id="map"> <!--Leaflet code goes below!--> </div>
+
+	<script>
+		
+		//Initializing map
+		//var myMap = L.map('map').setView([13.28, -88.72], 8);
+
+		//Using Base Layer
+
+		var map = L.map('map').setView([13.93548319282469, -89.02519940461512], 9);
+
+//L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  //  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+//}).addTo(map);
+
+
+L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+}).addTo(map);
+
+$.getJSON("es4map.geojson", function(data){
+	L.getJSON(data).addTo(map);
+});
+
+
+
+	</script>
+
+</div>
+
+<div class="div3"> 
+	<p>Click here to learn more about how this data is <a href="https://www.bcr.gob.sv/bcrsite/?cdr=85&lang=en">  curated</p>
+</div>
+</body>
+</html>

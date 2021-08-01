@@ -1,0 +1,31 @@
+.div1{
+	background-color: #375f87;
+		color: white;
+		border-style: groove;
+		font-family: Noto Serif;
+		font-size: 35px;
+		text-align: center
+}
+
+.div2{
+	background-color: lightblue; 
+	text-align: center; 
+	border-style: double;
+	font-family: Arial;
+	font-size: 20px
+}
+
+.div3{
+	background-color: #b3cfeb; 
+	text-align: left; 
+	border-style: double;
+	font-family: Arial;
+	font-size: 20px
+}
+
+#map {
+	width: 1000px;
+	height: 750px;
+	margin: auto;
+}
+
